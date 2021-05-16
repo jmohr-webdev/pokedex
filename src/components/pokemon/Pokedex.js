@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Pokecard from './Pokecard';
+import LoadButton from '../layout/LoadButton';
 
 const Pokedex = ({ pokemons }) => {
   return (

@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Pokecard = ({ pokemon }) => {
-  const { name, types } = pokemon;
+  const { name, types, sprites } = pokemon;
   const type = types[0].type.name;
-  console.log(type);
+  const imageUrl =
+    sprites.other.dream_world.front_default || sprites.front_default;
 
   return (
     <div className={`pokecard ${type}`}>
+      <img className="pokesprite" src={`${imageUrl}`} alt={`${name}`} />
       <div className={`pokename ${type}`}>
         <h4>{name}</h4>
       </div>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import Navbar from './components/layout/Navbar';
+import Pokebar from './components/layout/Pokebar';
 import Pokedex from './components/pokemon/Pokedex';
+import LoadButton from './components/layout/LoadButton';
 import fetchPokemon from './utilities/fetchPokemon';
 import './styles/style.css';
 
@@ -23,8 +24,11 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
-      <Pokedex pokemons={pokemons} />
+      <Pokebar />
+      <div className="container">
+        <Pokedex pokemons={pokemons} />
+        <LoadButton count={pokemons.length} />
+      </div>
     </div>
   );
 }
