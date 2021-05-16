@@ -6,7 +6,7 @@ const Pokedex = ({ pokemons }) => {
   return (
     <div className="pokedex">
       {pokemons.map((pokemon) => (
-        <Pokecard key={pokemon.name} name={pokemon.name} url={pokemon.url} />
+        <Pokecard key={pokemon.name} pokemon={pokemon} />
       ))}
     </div>
   );

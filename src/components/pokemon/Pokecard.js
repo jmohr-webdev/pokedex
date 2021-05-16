@@ -1,10 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Pokecard = ({ name, url }) => {
+const Pokecard = ({ pokemon }) => {
+  const { name, types } = pokemon;
+  const type = types[0].type.name;
+  console.log(type);
+
   return (
-    <div className="pokecard">
-      <div className="pokename">
+    <div className={`pokecard ${type}`}>
+      <div className={`pokename ${type}`}>
         <h4>{name}</h4>
       </div>
     </div>
@@ -12,8 +16,7 @@ const Pokecard = ({ name, url }) => {
 };
 
 Pokecard.propTypes = {
-  name: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  pokemon: PropTypes.object.isRequired,
 };
 
 export default Pokecard;
