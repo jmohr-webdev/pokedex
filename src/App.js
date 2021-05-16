@@ -7,27 +7,27 @@ import './styles/style.css';
 
 function App() {
   const [pokemons, setPokemons] = useState([]);
+  const [limit, setLimit] = useState(20);
 
   useEffect(() => {
-    if (localStorage.pokemons) {
-      console.log('fetching from local storage');
-      const pokemons = JSON.parse(localStorage.getItem('pokemons'));
-      setPokemons(pokemons);
-    } else {
-      fetchPokemon().then((data) => {
-        console.log('fetching from api');
-        setPokemons(data);
-        localStorage.setItem('pokemons', JSON.stringify(data));
-      });
-    }
+    fetchPokemon().then((data) => {
+      setPokemons(data);
+    });
   }, []);
+
+  const fetchMorePokemon = () => {
+    const startIndex = pokemons.length + 1;
+    fetchPokemon(startIndex, limit).then((data) => {
+      setPokemons(pokemons.concat(data));
+    });
+  };
 
   return (
     <div className="App">
       <Pokebar />
       <div className="container">
         <Pokedex pokemons={pokemons} />
-        <LoadButton count={pokemons.length} />
+        <LoadButton fetchMorePokemon={fetchMorePokemon} />
       </div>
     </div>
   );

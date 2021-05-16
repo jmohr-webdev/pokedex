@@ -1,12 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const LoadButton = ({ count }) => {
-  return <button className="btn btn-load">Load More</button>;
+const LoadButton = ({ fetchMorePokemon }) => {
+  const handleClick = () => {
+    fetchMorePokemon();
+  };
+
+  return (
+    <button className="btn btn-load" onClick={() => handleClick()}>
+      Load More
+    </button>
+  );
 };
 
 LoadButton.propTypes = {
-  count: PropTypes.number.isRequired,
+  pokemons: PropTypes.array,
 };
 
 export default LoadButton;
