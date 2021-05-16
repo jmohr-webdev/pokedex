@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Chango&family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+.navbar h1 {
+  text-transform: uppercase;
+  font-family: 'Chango', cursive;
+  font-size: 2em;
+}
