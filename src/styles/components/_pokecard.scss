@@ -1,3 +1,6 @@
+@import '../abstracts/types';
+@import '../abstracts/mixins';
+
 .pokecard {
   position: relative;
   display: flex;
@@ -7,13 +10,13 @@
   height: 300px;
   width: 100%;
   box-shadow: 2px 0px 6px 1px rgba(0, 0, 0, 0.43);
-  background-color: #eee;
   border-radius: 5px 5px 0 0;
 }
 
 .pokesprite {
-  transform: translateY(-10%);
+  transform: translateY(-15%);
   max-width: 50%;
+  max-height: 50%;
 }
 
 .pokename {
@@ -21,7 +24,6 @@
   text-align: center;
   text-transform: capitalize;
   letter-spacing: 0.25em;
-  background-color: #ff0000;
   color: #fff;
   padding: 10px;
   width: 100%;

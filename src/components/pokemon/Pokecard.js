@@ -8,9 +8,9 @@ const Pokecard = ({ pokemon }) => {
     sprites.other.dream_world.front_default || sprites.front_default;
 
   return (
-    <div className={`pokecard ${type}`}>
+    <div className={`pokecard ${type}-light`}>
       <img className="pokesprite" src={`${imageUrl}`} alt={`${name}`} />
-      <div className={`pokename ${type}`}>
+      <div className={`pokename ${type}-dark`}>
         <h4>{name}</h4>
       </div>
     </div>
