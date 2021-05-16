@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
@@ -18,4 +19,37 @@
   text-transform: uppercase;
   font-family: 'Chango', cursive;
   font-size: 2em;
+}
+
+.pokedex {
+  margin: 50px auto;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2.5em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  min-height: 100vh;
+  max-width: 80%;
+}
+
+.pokecard {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  box-shadow: 2px 0px 6px 1px rgba(0, 0, 0, 0.43);
+  background-color: #eee;
+  border-radius: 5px 5px 0 0;
+}
+
+.pokename {
+  position: absolute;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 0.25em;
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+  bottom: 0;
 }
