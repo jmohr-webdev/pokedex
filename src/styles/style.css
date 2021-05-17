@@ -30,6 +30,41 @@
   margin-bottom: 20px;
 }
 
+.spinner {
+  -webkit-animation: rotate 1.8s ease-in-out infinite;
+          animation: rotate 1.8s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  90% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  90% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 .bug {
   background-color: #a8b820;
 }
@@ -278,6 +313,19 @@
   -webkit-box-shadow: 2px 0px 6px 1px rgba(0, 0, 0, 0.43);
           box-shadow: 2px 0px 6px 1px rgba(0, 0, 0, 0.43);
   border-radius: 5px 5px 0 0;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  -webkit-filter: saturate(0.75);
+          filter: saturate(0.75);
+}
+
+.pokecard:hover {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  -webkit-box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.53);
+          box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.53);
+  -webkit-filter: saturate(1);
+          filter: saturate(1);
 }
 
 .pokesprite {
@@ -290,12 +338,13 @@
 .pokename {
   position: absolute;
   text-align: center;
-  text-transform: capitalize;
-  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
   color: #fff;
   padding: 10px;
   width: 100%;
   bottom: 0;
+  border-radius: 0 0 5px 5px;
 }
 
 .pokedex {
