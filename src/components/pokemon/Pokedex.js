@@ -1,6 +1,7 @@
 import React, { Fragment, useContext, useEffect } from 'react';
 import PokemonContext from '../../context/pokemon/pokemonContext';
 import Pokecard from './Pokecard';
+import LoadButton from '../layout/LoadButton';
 import Spinner from '../layout/Spinner';
 
 const Pokedex = () => {
@@ -20,6 +21,7 @@ const Pokedex = () => {
           <Pokecard key={pokemon.name} pokemon={pokemon} />
         ))}
       </div>
+      <LoadButton />
     </Fragment>
   );
 };

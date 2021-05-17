@@ -9,7 +9,7 @@ const PokemonState = (props) => {
     pokemons: [],
     pokemonCount: 0,
     limit: 20,
-    loading: false,
+    loading: true,
   };
 
   const [state, dispatch] = useReducer(PokemonReducer, initialState);
@@ -18,8 +18,6 @@ const PokemonState = (props) => {
   const pokeUrl = 'https://pokeapi.co/api/v2';
 
   const fetchPokemon = async () => {
-    setLoading();
-
     let fetchedPokemons = [];
     let startIndex = pokemonCount + 1;
 
