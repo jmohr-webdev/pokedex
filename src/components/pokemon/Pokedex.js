@@ -1,8 +1,18 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment, useContext, useEffect } from 'react';
+import PokemonContext from '../../context/pokemon/pokemonContext';
 import Pokecard from './Pokecard';
+import Spinner from '../layout/Spinner';
 
-const Pokedex = ({ pokemons }) => {
+const Pokedex = () => {
+  const pokemonContext = useContext(PokemonContext);
+  const { pokemons, loading, fetchPokemon } = pokemonContext;
+
+  useEffect(() => {
+    fetchPokemon();
+  }, []);
+
+  if (loading) return <Spinner />;
+
   return (
     <Fragment>
       <div className="pokedex">
@@ -12,10 +22,6 @@ const Pokedex = ({ pokemons }) => {
       </div>
     </Fragment>
   );
-};
-
-Pokedex.propTypes = {
-  pokemons: PropTypes.array.isRequired,
 };
 
 export default Pokedex;

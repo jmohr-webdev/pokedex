@@ -1,9 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
+import PokemonContext from '../../context/pokemon/pokemonContext';
 
-const LoadButton = ({ fetchMorePokemon }) => {
+const LoadButton = () => {
+  const pokemonContext = useContext(PokemonContext);
+  const { fetchPokemon } = pokemonContext;
+
   const handleClick = () => {
-    fetchMorePokemon();
+    fetchPokemon();
   };
 
   return (
@@ -11,10 +14,6 @@ const LoadButton = ({ fetchMorePokemon }) => {
       Load More
     </button>
   );
-};
-
-LoadButton.propTypes = {
-  pokemons: PropTypes.array,
 };
 
 export default LoadButton;
